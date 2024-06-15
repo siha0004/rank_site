@@ -5,7 +5,9 @@ html {
   --font_display: "Playfair Display", serif;
   --font_body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-  /* COLOURS */
+  /************* PRIMITIVES *************/
+
+  /* PRIMARY - BEIGE*/
   --primary_50: #fdfcfb;
   --primary_100: #faf6f1;
   --primary_200: #f7f2eb;
@@ -17,6 +19,7 @@ html {
   --primary_800: #837d74;
   --primary_900: #645f59;
 
+  /* SECONDARY - WARM BROWN*/
   --secondary_50: #ede9e6;
   --secondary_100: #c6bab2;
   --secondary_200: #aa988d;
@@ -28,6 +31,7 @@ html {
   --secondary_800: #271204;
   --secondary_900: #1d0d03;
 
+  /* ACCENT - TERRACOTTA*/
   --accent_50: #f8eeeb;
   --accent_100: #e9c9c2;
   --accent_200: #dfafa4;
@@ -38,6 +42,30 @@ html {
   --accent_700: #833928;
   --accent_800: #662c1f;
   --accent_900: #4e2218;
+
+  /* COLD BROWN */
+  /* --secondary_50: #eeedec;
+  --secondary_100: #cac6c4;
+  --secondary_200: #b0aba8;
+  --secondary_300: #8c8480;
+  --secondary_400: #756d67;
+  --secondary_500: #54453b;
+  --secondary_600: #4c3f36;
+  --secondary_700: #3c312a;
+  --secondary_800: #2e2620;
+  --secondary_900: #231d19; */
+
+  /* GREEN */
+  /* --accent_50: #ecf2f1;
+  --accent_100: #c4d6d2;
+  --accent_200: #a8c2bc;
+  --accent_300: #80a79e;
+  --accent_400: #67958b;
+  --accent_500: #417b6e;
+  --accent_600: #3b7064;
+  --accent_700: #2e574e;
+  --accent_800: #24443d;
+  --accent_900: #1b342e; */
 
   /* SPACING */
   --spacing_1: 2px;
@@ -60,7 +88,23 @@ html {
   --radius_l: 16px;
   --radius_max: 800px;
 
-  /* EFFECTS */
+  /************* SEMANTIC COLOUR *************/
+  /* TEXT */
+  --text-body-primary: var(--secondary_500);
+  --text-body-secondary: var(--primary_50);
+
+  /* SURFACE */
+  --surface-base-primary: var(--primary_100);
+  --surface-base-secondary: var(--secondary_500);
+  --surface-primary: var(--accent_600);
+
+  --surface-navigation: var(--primary_300);
+  --surface-card: var(--primary_200);
+  --surface-form: var(--primary_300);
+
+  /* BORDER */
+  --border-default: var(--primary_400);
+  --border-active: var(--primary_600);
 }
 
 /************* RESET *************/

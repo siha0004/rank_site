@@ -95,16 +95,11 @@ html {
   /* TEXT */
   --text-body-primary: var(--secondary_500);
   --text-body-secondary: var(--primary_100);
-
-  --text-button-disabled: var(--primary_50);
-
-  --text-link-primary: var(--secondary_500);
-  --text-link-secondary: var(--accent_600);
+  --text-placeholder: var(--secondary_300);
 
   /* SURFACE */
   --surface-base-primary: var(--primary_100);
   --surface-base-secondary: var(--secondary_500);
-
   --surface-cta: var(--accent_600);
   --surface-cta-disabled: var(--secondary_200);
   --surface-navigation: var(--primary_300);

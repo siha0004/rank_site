@@ -1,8 +1,8 @@
 ---
-const { type, color, link, hide } = Astro.props;
+const { type, link, hide } = Astro.props;
 ---
 
-<a class={"button " + type + " " + color + " " + hide} href={link}><slot /></a>
+<a class={"button " + type + " " + hide} href={link}><slot /></a>
 
 <style>
   /********** Basics på udseende **********/
@@ -11,12 +11,11 @@ const { type, color, link, hide } = Astro.props;
     font-family: var(--font_body);
     font-size: 1rem;
     font-weight: 400;
-    color: var(--primary_50);
+    color: var(--text-body-secondary);
     text-decoration: none;
 
-    background-color: var(--accent_600);
-    border: solid;
-    border-color: var(--accent_600);
+    background-color: var(--surface-cta);
+    border: var(--border_m) solid var(--surface-cta);
     border-radius: var(--radius_max);
 
     padding: var(--spacing_4) var(--spacing_6);
@@ -29,23 +28,25 @@ const { type, color, link, hide } = Astro.props;
     font-size: 1.rem;
   } */
   .button:visited {
-    color: var(--primary_50);
+    color: var(--text-body-secondary);
   }
 
   /********** type - prop  **********/
   .primary {
-    background-color: var(--accent_600);
-    border-color: var(--accent_600);
-  }
-  .secondary {
-    color: var(--accent_600);
-    background-color: transparent;
+    background-color: var(--surface-cta);
+    border-color: var(--surface-cta);
   }
 
   .primary:hover {
     box-shadow:
       0px 1px 3px rgba(210, 210, 210, 0.8),
       0px 4px 10px rgba(210, 210, 210, 0.8);
+  }
+
+  /* Secondary */
+  .secondary {
+    color: var(--surface-cta);
+    background-color: transparent;
   }
   .secondary:hover {
     box-shadow:
@@ -54,24 +55,15 @@ const { type, color, link, hide } = Astro.props;
   }
 
   .secondary:visited {
-    color: var(--accent_600);
-  }
-  .disabled:visited,
-  .disabled {
-    border-color: var(--secondary_200);
-    color: var(--secondary_200);
-    background-color: transparent;
-    cursor: default;
+    color: var(--surface-cta);
   }
 
-  /********** color - prop  **********/
-  .primary .light {
-    background-color: var(--primary_400);
-    border-color: var(--primary_400);
-  }
-  .secondary .light {
-    color: var(--primary_400);
-    border-color: var(--primary_400);
+  /* Disabled */
+  .disabled:visited,
+  .disabled {
+    border-color: var(--surface-cta-disabled);
+    color: var(--surface-cta-disabled);
     background-color: transparent;
+    cursor: default;
   }
 </style>

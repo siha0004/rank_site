@@ -23,6 +23,12 @@ const { current } = Astro.props;
     color: var(--secondary_500);
   }
 
+  @media (min-width: 600px) {
+    article {
+      margin: var(--spacing_6);
+      gap: var(--spacing_5);
+    }
+  }
   @media (min-width: 1000px) {
     article {
       margin: var(--spacing_6);

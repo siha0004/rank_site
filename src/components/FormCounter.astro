@@ -23,10 +23,8 @@
     height: 100%;
   }
   div {
-    background-color: var(--primary_200);
-    border: solid;
-    border-color: var(--primary_400);
-
+    background-color: var(--surface-form);
+    border: var(--border_m) solid var(--border-primary-default);
     padding: var(--spacing_3);
   }
 
@@ -43,12 +41,14 @@
   .number {
     border-right: none;
     border-left: none;
+    padding-right: var(--spacing_6);
+    padding-left: var(--spacing_6);
   }
 
   /* HOVER */
   .remove:hover,
   .add:hover {
-    background-color: var(--primary_300);
-    border-color: var(--primary_600);
+    background-color: var(--surface-form-active);
+    border-color: var(--border-primary-active);
   }
 </style>

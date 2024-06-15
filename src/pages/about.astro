@@ -8,8 +8,8 @@ import InstagramGrid from "../components/InstagramGrid.astro";
 
 <MainLayouts>
   <Hero img="Lars_mobile.webp" img_desk="Lars_desk.webp" heading="Lars Rank" button="hide" button_txt="" side="right" />
-  <section class="about">
-    <Text color="background" heading="Keramikkeren bag">
+  <section class="about flex_col-grid_1_1">
+    <Text heading="Keramikkeren bag">
       <p>Mine keramiske designs er forankret i den skandinaviske designtradition, og er kendetegnet ved rene, enkle former med en dekoration som overrasker. Design processen er et samspil mellem det keramiske materiale og ideen.</p>
       <p>Jeg har en baggrund som uddannet billedkunstner på Det Jyske Kunstakademi i 2001, og arbejdede i en del år i et krydsfelt mellem kunst og design, hvor keramikken havde en central rolle.</p>
       <p>
@@ -20,11 +20,11 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     <img src="/img/webp/lars_working.webp" alt="Lars Rank der arbejder" class="order" />
   </section>
   <section class="background grid">
-    <h2>Metoder og materialer</h2>
+    <h2 class="light">Metoder og materialer</h2>
     <Grid />
   </section>
-  <section class="contact">
-    <Text color="background" heading="Kontakt">
+  <section class="contact flex_col-grid_1_1">
+    <Text color="" heading="Kontakt">
       <p>Ønsker at du at kontakte mig, skal du være velkommen til at besøge min butik og værksted, på Christianshavn. Du kan også blot kontakte mig på telefon eller mail.</p>
       <div>
         <h4>Mail</h4>
@@ -41,7 +41,7 @@ import InstagramGrid from "../components/InstagramGrid.astro";
     </Text>
     <img src="/img/webp/butik.webp" alt="Billede af butikken Made Here" />
   </section>
-  <section class="background some">
+  <section class="background some flex_col-grid_1_1">
     <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
     <div class="order">
       <InstagramGrid />
@@ -53,35 +53,6 @@ import InstagramGrid from "../components/InstagramGrid.astro";
   img {
     border-radius: var(--radius_m);
   }
-  /* Color styling */
-  .light {
-    color: var(--primary_100);
-  }
-  /* GENERAL SECTION */
-  section {
-    padding: var(--spacing_9) var(--spacing_5);
-  }
-
-  .background {
-    background-color: var(--secondary_500);
-  }
-
-  .background h2 {
-    color: var(--primary_100);
-  }
-
-  /* SECTIONS */
-  .about,
-  .contact,
-  .some {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing_8);
-  }
-  .about img {
-    border-radius: var(--radius_m);
-  }
-
   .about {
     padding-top: 0;
   }
@@ -94,35 +65,8 @@ import InstagramGrid from "../components/InstagramGrid.astro";
   }
 
   @media (min-width: 800px) {
-    /* GENERAL SECTION */
-    section,
-    .background {
-      padding: var(--spacing_12) var(--spacing_13);
-    }
-
-    /* .about {
-      flex-direction: row;
-      gap: var(--spacing_6);
-    } */
-
     .about {
       padding-top: var(--spacing_12);
-    }
-
-    .background h2 {
-      align-self: center;
-    }
-    .about,
-    .contact,
-    .some {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing_12);
-      align-items: center;
-    }
-
-    .order {
-      order: -1;
     }
   }
 </style>

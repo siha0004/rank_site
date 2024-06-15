@@ -31,7 +31,7 @@ import CardCollection from "../components/CardCollection.astro";
       </div>
     </div>
   </section>
-  <section class="about">
+  <section class="about flex_col-grid_1_1">
     <img src="/img/webp/lars_working.webp" alt="Billede af Keramikker Lars som arbejder" width="500" height="500" />
     <Text color="dark" heading="Keramikkeren bag">
       <p>
@@ -41,7 +41,7 @@ import CardCollection from "../components/CardCollection.astro";
       <Button type="secondary" link="#">Læs mere</Button>
     </Text>
   </section>
-  <section class="background some">
+  <section class="background flex_col-grid_1_1">
     <InstagramGrid />
     <div class="order">
       <Text color="light" heading="Følg med"><p class="light">Følg min kreative rejse på Instagram, og få et indblik i mit keramiske univers. Her kan du følge med i udviklingen af nye produkter, se processen bag og deltage i konkurrencer.</p></Text>
@@ -50,21 +50,6 @@ import CardCollection from "../components/CardCollection.astro";
 </MainLayouts>
 
 <style>
-  /* Color styling */
-  .light {
-    color: var(--primary_100);
-  }
-  .dark {
-    color: var(--secondary_500);
-  }
-  .background {
-    background-color: var(--secondary_500);
-  }
-
-  /* GENERAL SECTION */
-  section {
-    padding: var(--spacing_9) var(--spacing_5);
-  }
   .carousel {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -79,7 +64,6 @@ import CardCollection from "../components/CardCollection.astro";
   }
 
   /* KOLLEKTIONER SECTION */
-
   .collections {
     display: flex;
     flex-direction: column;
@@ -101,68 +85,23 @@ import CardCollection from "../components/CardCollection.astro";
     justify-content: center;
   }
 
-  /* OM RANK SECTION */
-  .about {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing_6);
-  }
+  /* ABOUT SECTION */
   .about img {
     border-radius: var(--radius_m);
   }
 
-  /* SO ME SECTION */
-  .some {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing_6);
-  }
-
-  /********************************************************** Tablet version **********************************************************/
-  @media (min-width: 600px) {
-    section,
-    .background {
-      padding: var(--spacing_8) var(--spacing_10);
-    }
-  }
-
   /********************************************************** Desk version **********************************************************/
   @media (min-width: 1000px) {
-    /* GENERAL SECTION */
-
-    section,
-    .background {
-      padding: var(--spacing_12) var(--spacing_13);
-    }
     /* COLLECTIONS SECTION */
+    .nopadding {
+      padding-right: 0;
+      padding-left: 0;
+    }
     .collections {
       gap: var(--spacing_8);
     }
     .collection_cards {
       gap: var(--spacing_4);
-    }
-
-    /* CARROUSEL SECTION */
-    h2 {
-      text-align: center;
-    }
-
-    .nopadding {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    /* ABOUT AND SO ME SECTION */
-    .about,
-    .some {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing_12);
-      align-items: center;
-    }
-    /* Change order in SoMe section */
-    .order {
-      order: -1;
     }
   }
 </style>

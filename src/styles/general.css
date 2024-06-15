@@ -88,27 +88,38 @@ html {
   --radius_l: 16px;
   --radius_max: 800px;
 
-  /************* SEMANTIC COLOUR *************/
+  /* BORDER */
+  --border_m: 2px;
+  /************* SEMANTIC COLOUR VARIABLES *************/
+
   /* TEXT */
   --text-body-primary: var(--secondary_500);
-  --text-body-secondary: var(--primary_50);
+  --text-body-secondary: var(--primary_100);
+
+  --text-button-disabled: var(--primary_50);
+
+  --text-link-primary: var(--secondary_500);
+  --text-link-secondary: var(--accent_600);
 
   /* SURFACE */
   --surface-base-primary: var(--primary_100);
   --surface-base-secondary: var(--secondary_500);
-  --surface-primary: var(--accent_600);
 
+  --surface-cta: var(--accent_600);
+  --surface-cta-disabled: var(--secondary_200);
   --surface-navigation: var(--primary_300);
   --surface-card: var(--primary_200);
-  --surface-form: var(--primary_300);
+  --surface-form: var(--primary_200);
+  --surface-form-active: var(--primary_400);
 
   /* BORDER */
-  --border-default: var(--primary_400);
-  --border-active: var(--primary_600);
+  --border-primary-default: var(--primary_400);
+  --border-primary-active: var(--primary_600);
+
+  --border-secondary: var(--secondary_300);
 }
 
 /************* RESET *************/
-
 * {
   padding: 0;
   margin: 0;
@@ -118,7 +129,7 @@ html {
 body {
   max-width: 1800px;
   margin: 0 auto;
-  background-color: var(--primary_100);
+  background-color: var(--surface-base-primary);
 }
 
 img {
@@ -137,41 +148,41 @@ h1 {
   font-family: var(--font_display);
   font-size: 3rem;
   font-weight: 400;
-  color: var(--secondary_500);
+  color: var(--text-body-primary);
 }
 h2 {
   font-family: var(--font_display);
   font-size: 2rem;
   font-weight: 400;
-  color: var(--secondary_500);
+  color: var(--text-body-primary);
 }
 h3 {
   font-family: var(--font_display);
   font-size: 1.5rem;
   font-weight: 400;
-  color: var(--secondary_500);
+  color: var(--text-body-primary);
 }
 h4 {
   font-family: var(--font_body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--secondary_500);
+  color: var(--text-body-primary);
 }
 
 p {
   font-family: var(--font_body);
   font-size: 1rem;
   font-weight: 300;
-  color: var(--secondary_500);
+  color: var(--text-body-primary);
   line-height: 150%;
   max-width: 65ch;
 }
 
-/************* LINK + BUTTON STYLING *************/
+/************* LINK + BUTTON *************/
 a {
   font-family: var(--font_body);
   font-weight: 300;
-  color: var(--accent_600);
+  color: var(--text-link-secondary);
   text-decoration: underline;
 }
 
@@ -181,7 +192,71 @@ button {
   cursor: pointer;
 }
 
-@media (min-width: 800px) {
+/************* FORMS *************/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_3);
+}
+form div {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing_2);
+}
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 6px;
+  border: 2px solid var(--border-secondary);
+  border-radius: var(--radius_s);
+  cursor: pointer;
+}
+input[type="checkbox"]::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked {
+  transform: scale(1);
+  background-color: var(--border-secondary);
+}
+
+label {
+  font-family: var(--font_body);
+  color: var(--text-body-primary);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/************* COLORS *************/
+
+.light {
+  color: var(--text-body-secondary);
+}
+.dark {
+  color: var(--surface-base-secondary);
+}
+.background {
+  background-color: var(--secondary_500);
+}
+/************* SECTIONS *************/
+/* GENERAL SECTION */
+section {
+  padding: var(--spacing_9) var(--spacing_5);
+}
+
+/************* FLEX + GRID *************/
+.flex_col-grid_1_1 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_6);
+}
+
+/********************************************************** Tablet version **********************************************************/
+@media (min-width: 600px) {
+  /* TEXT */
   h1 {
     font-size: 3rem;
   }
@@ -191,5 +266,38 @@ button {
   h3 {
     font-size: 2rem;
   }
-  /* test */
+  /* SECTION */
+  section,
+  .background {
+    padding: var(--spacing_8) var(--spacing_10);
+  }
+}
+/********************************************************** Mellemstadie version **********************************************************/
+@media (min-width: 800px) {
+  .background h2 {
+    align-self: center;
+  }
+
+  /* FLEX + GRID */
+  .flex_col-grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing_12);
+    align-items: center;
+  }
+  .order {
+    order: -1;
+  }
+}
+
+/********************************************************** Desk version **********************************************************/
+@media (min-width: 1000px) {
+  /* GENERAL SECTION */
+
+  section,
+  .background {
+    padding: var(--spacing_12) var(--spacing_13);
+  }
+
+  /* Changes order */
 }

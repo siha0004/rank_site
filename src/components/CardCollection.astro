@@ -1,8 +1,8 @@
 ---
-const { img, collection, animation, h3 } = Astro.props;
+const { img, collection, animation, h3, link } = Astro.props;
 ---
 
-<a href="#">
+<a href={link}>
   <article class={animation}>
     <img src=`/img/webp/${img}` alt="Billede af kollektion" />
     <h3 class={h3}>{collection}</h3>

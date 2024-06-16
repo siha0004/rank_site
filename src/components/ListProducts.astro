@@ -16,16 +16,16 @@ const data = await fetch(url, {
 console.log("data:", data);
 ---
 
-<section>
+<div>
   {
     data.map((product, i) => {
       return <CardProduct data={product} />;
     })
   }
-</section>
+</div>
 
 <style>
-  section {
+  div {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     gap: var(--spacing_5);

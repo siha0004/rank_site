@@ -269,10 +269,6 @@ section {
 }
 /********************************************************** Mellemstadie version **********************************************************/
 @media (min-width: 800px) {
-  .background h2 {
-    align-self: center;
-  }
-
   /* FLEX + GRID */
   .flex_col-grid_1_1 {
     display: grid;
@@ -282,6 +278,10 @@ section {
   }
   .order {
     order: -1;
+  }
+
+  .txt_center {
+    text-align: center;
   }
 }
 
